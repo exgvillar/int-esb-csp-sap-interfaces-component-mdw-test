@@ -39,7 +39,7 @@ pipeline {
             steps {
                 script {
                     echo "🏗️ Compilando rama ${env.BRANCH_NAME ?: env.CHANGE_TARGET}..."
-                    dir('icbs-interface-core') {
+                    dir('csp-sap-interfaces') {
                         def target = env.BRANCH_NAME ?: env.CHANGE_TARGET ?: ''
                         def profile = target == 'develop' ? 'develop' : target == 'release' ? 'release' : 'project_release'
                         sh """
@@ -67,8 +67,8 @@ pipeline {
                             sh """
                                 echo "🚦 Ejecutando análisis con SonarScanner..."
                                 ${tool 'SonarScanner'}/bin/sonar-scanner \
-                                    -Dsonar.projectKey=icbs-interface-core \
-                                    -Dsonar.projectName="ICBS Interface Core" \
+                                    -Dsonar.projectKey=csp-sap-interfaces \
+                                    -Dsonar.projectName="CSP SAP INTERFACES" \
                                     -Dsonar.sources=src \
                                     -Dsonar.java.binaries=target/classes \
                                     -Dsonar.host.url=http://sonarqube:9000 \
