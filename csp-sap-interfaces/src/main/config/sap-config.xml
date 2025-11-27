@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<config>
+
+	<group name="CRM-SAP-DEV">
+		<param name="jco.client.ashost">cspsadcrmdev.consupago.com</param> <!-- 10.129.40.123 -->
+		<param name="jco.client.sysnr">00</param>
+		<param name="jco.client.client">150</param>
+		<param name="jco.client.user">ESBCOMM</param>
+		<param name="jco.client.passwd">ESBCOMM01</param>
+		<param name="jco.destination.pool_capacity">3</param>
+		<param name="jco.destination.peak_limit">30</param>
+		<param name="jco.client.lang">es</param>
+	</group>
+
+	<group name="CRM-SAP-QA">
+		<param name="jco.client.ashost">cspsadcrmqa.consupago.com</param> <!-- 10.129.40.147 -->
+		<param name="jco.client.sysnr">00</param>
+		<param name="jco.client.client">200</param>
+		<param name="jco.client.user">ESBCOMM</param>
+		<param name="jco.client.passwd">ESBCOMM01</param>
+		<param name="jco.destination.pool_capacity">90</param>
+		<param name="jco.destination.peak_limit">90</param>
+		<param name="jco.client.lang">es</param>
+	</group>
+
+	<group name="CRM-SAP-PRD">
+		<param name="jco.client.ashost">CLUSSAPCRM.consupago.com</param> <!-- 192.168.201.106 -->
+		<param name="jco.client.sysnr">11</param>
+		<param name="jco.client.client">300</param>
+		<param name="jco.client.user">ESBCOMM</param>
+		<param name="jco.client.passwd">ESBCOMM01</param>
+		<param name="jco.destination.pool_capacity">300</param>
+		<param name="jco.destination.peak_limit">300</param>
+		<param name="jco.client.lang">es</param>
+	</group>
+	
+	<group name="CRM-SAP-PRD-BKY">
+		<param name="jco.client.ashost">CSBKIOCRM02.consupago.com</param> <!-- 192.168.201.106 -->
+		<param name="jco.client.sysnr">12</param>
+		<param name="jco.client.client">300</param>
+		<param name="jco.client.user">ESBCOMM</param>
+		<param name="jco.client.passwd">ESBCOMM01</param>
+		<param name="jco.destination.pool_capacity">300</param>
+		<param name="jco.destination.peak_limit">300</param>
+		<param name="jco.client.lang">es</param>
+	</group>
+
+	<group name="ERP-SAP-DEV">
+		<param name="jco.client.ashost">cspstferpdev.consupago.com</param> <!-- 10.129.40.66 -->
+		<param name="jco.client.sysnr">00</param>
+		<param name="jco.client.client">120</param>
+		<param name="jco.client.user">ESBCOMM</param>
+		<param name="jco.client.passwd">Mexico01\\</param>
+		<param name="jco.destination.pool_capacity">3</param>
+		<param name="jco.destination.peak_limit">30</param>
+		<param name="jco.client.lang">es</param>
+	</group>
+
+	<group name="ERP-SAP-QA">
+		<param name="jco.client.ashost">cspstferpqa.consupago.com</param> <!-- 10.129.40.67 -->
+		<param name="jco.client.sysnr">00</param>
+		<param name="jco.client.client">200</param>
+		<param name="jco.client.user">ESBCOMM</param>
+		<param name="jco.client.passwd">Mexico01\\</param>
+		<param name="jco.destination.pool_capacity">30</param>
+		<param name="jco.destination.peak_limit">30</param>
+		<param name="jco.client.lang">es</param>
+	</group>
+
+	<group name="ERP-SAP-PRD">
+		<param name="jco.client.ashost">CLUSSAPECC.consupago.com</param> <!-- 192.168.201.249 -->
+		<param name="jco.client.sysnr">01</param>
+		<param name="jco.client.client">300</param>
+		<param name="jco.client.user">ESBCOMM</param>
+		<param name="jco.client.passwd">Mexico01\\</param>
+		<param name="jco.destination.pool_capacity">50</param>
+		<param name="jco.destination.peak_limit">50</param>
+		<param name="jco.client.lang">es</param>
+	</group>
+	
+	<group name="ERP-SAP-PRD-BKY">
+		<param name="jco.client.ashost">CLUSSAPECC.consupago.com</param> <!-- 192.168.201.249 -->
+		<param name="jco.client.sysnr">01</param>
+		<param name="jco.client.client">300</param>
+		<param name="jco.client.user">ESBCOMM</param>
+		<param name="jco.client.passwd">Mexico01\\</param>
+		<param name="jco.destination.pool_capacity">50</param>
+		<param name="jco.destination.peak_limit">50</param>
+		<param name="jco.client.lang">es</param>
+	</group>
+	
+</config>

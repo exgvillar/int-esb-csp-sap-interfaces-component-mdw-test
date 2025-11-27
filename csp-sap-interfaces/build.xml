@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="Consupago/SAP-CRM/ESB-JCo" default="build-dist" basedir=".">
+
+	<property file="build.properties" />
+
+	<!-- global properties -->
+	<property name="source" value="${basedir}/src/main/java"/>
+	<property name="config" value="${basedir}/src/main/config"/>
+	<property name="test" value="${basedir}/src/test/java"/>
+	<property name="build" value="${basedir}/build"/>
+	<property name="dist" value="${basedir}/dist"/>
+	<property name="java-lib" value="${basedir}/lib/java"/>
+	<property name="source-cfg" value="${basedir}/src/wsdl"/>
+	<property name="xsl" value="${basedir}/src/xsl"/>
+
+	<!-- build properties -->
+	<property name="opt-debug" value="on"/>
+	<property name="opt-target" value="1.4"/>
+
+	
+	<!-- classpath -->
+	<path id="project-classpath">
+		<pathelement location="${java-lib}/axis.jar"/>
+		<pathelement location="${java-lib}/axis-ant.jar"/>
+		<pathelement location="${java-lib}/commons-discovery-0.2.jar"/>
+		<pathelement location="${java-lib}/commons-logging-1.0.4.jar"/>
+		<pathelement location="${java-lib}/jaxrpc.jar"/>
+		<pathelement location="${java-lib}/junit_3.8.1.jar"/>
+		<pathelement location="${java-lib}/log4j-1.2.8.jar"/>
+		<pathelement location="${java-lib}/saaj.jar"/>
+		<pathelement location="${java-lib}/wsdl4j-1.5.1.jar"/>
+		<pathelement location="${java-lib}/commons-lang-2_0.jar"/>		
+	</path>
+
+	<path id="run-classpath">
+		<pathelement location="${java-lib}/impl/fscontext-1_2_b3.jar"/>
+		<pathelement location="${java-lib}/impl/xerces-1_4_3.jar"/>
+		<pathelement location="${java-lib}/impl/providerutil-1_2.jar"/>
+		<pathelement location="${java-lib}/impl/com.ibm.mq.jar"/>
+		<pathelement location="${java-lib}/impl/com.ibm.mqjms.jar"/>
+	</path>
+
+	<!-- build targets -->
+	<target name="init">
+		<delete dir="${dist}"/>
+		<mkdir dir="${dist}"/>
+	</target>
+
+	<target name="clear">
+		<delete dir="${build}"/>
+		<mkdir dir="${build}"/>
+	</target>
+
+	<target name="build-dist"/>
+	
+	<target name="build-config" depends="init">
+		<echo>building configuration JCO files for :: ${environment.runtime}</echo>
+		<echo>building file FOR CRM</echo>
+		<xslt in="${config}/sap-config.xml" out="${config}/sap-crm.config" style="${xsl}/sap-config.xsl" force="true">
+			<param name="environment" expression="CRM-${environment.runtime}" />
+		</xslt>		
+		<echo>building file FOR ERP</echo>
+		<xslt in="${config}/sap-config.xml" out="${config}/sap-erp.config" style="${xsl}/sap-config.xsl" force="true">
+			<param name="environment" expression="ERP-${environment.runtime}" />
+		</xslt>		
+	</target>
+	
+</project>
