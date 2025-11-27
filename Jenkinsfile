@@ -62,13 +62,13 @@ pipeline {
             steps {
                 script {
                     echo "🔍 Análisis SonarQube en rama ${env.BRANCH_NAME}..."
-                    dir('icbs-interface-core') {
+                    dir('icbs-interface') {
                         withSonarQubeEnv('SonarQube') {
                             sh """
                                 echo "🚦 Ejecutando análisis con SonarScanner..."
                                 ${tool 'SonarScanner'}/bin/sonar-scanner \
                                     -Dsonar.projectKey=csp-sap-interfaces \
-                                    -Dsonar.projectName="CSP SAP INTERFACES" \
+                                    -Dsonar.projectName="CSP SAP Interface" \
                                     -Dsonar.sources=src \
                                     -Dsonar.java.binaries=target/classes \
                                     -Dsonar.host.url=http://sonarqube:9000 \
