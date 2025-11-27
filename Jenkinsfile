@@ -62,7 +62,7 @@ pipeline {
             steps {
                 script {
                     echo "🔍 Análisis SonarQube en rama ${env.BRANCH_NAME}..."
-                    dir('icbs-interface-core') {
+                    dir('csp-sap-interfaces') {
                         withSonarQubeEnv('SonarQube') {
                             sh """
                                 echo "🚦 Ejecutando análisis con SonarScanner..."
